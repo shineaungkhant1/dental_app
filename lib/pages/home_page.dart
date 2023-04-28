@@ -4,6 +4,7 @@ import '../utils/constants.dart';
 import '../utils/dimens.dart';
 import '../widgets/horizontal_patients_list_view.dart';
 import '../widgets/time_and_event_list_custom_layout.dart';
+import 'detail_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                     child: TimeAndEventListCustomLayout(
                   listOfEvents: listOfEvents,
                   onTapEvent: () {
-                    // navigateToEventDetailScreen(context);
+                    navigateToEventDetailScreen(context);
                   },
                 ))
               ],
@@ -244,6 +245,13 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Future<dynamic> navigateToEventDetailScreen(BuildContext context) {
+  return Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => EventDetailPage()),
+  );
 }
 
 class MyPatientsView extends StatelessWidget {

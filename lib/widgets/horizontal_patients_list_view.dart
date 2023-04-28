@@ -1,22 +1,18 @@
-
 import 'package:flutter/material.dart';
-
 
 import '../utils/constants.dart';
 import '../utils/dimens.dart';
 
 class MyPatientsHorizontalListView extends StatelessWidget {
-
-
   final Color backgroundColor;
   final bool isDetailFlag;
-   List<MyPatient> listOfMyPatient;
+  List<MyPatient> listOfMyPatient;
 
-  MyPatientsHorizontalListView({
-   required this.backgroundColor,
-    required this.isDetailFlag,
-    required this.listOfMyPatient
-  });
+  MyPatientsHorizontalListView(
+      {super.key,
+      required this.backgroundColor,
+      required this.isDetailFlag,
+      required this.listOfMyPatient});
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +20,10 @@ class MyPatientsHorizontalListView extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: 2,
       itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-          onTap: () {
-            // widget.onTapCity(widget.citiesList.elementAt(index));
-          },
-          child: HorizontalListEachItemView(
-            backgroundColor: backgroundColor,
-            myPatient: listOfMyPatient[index],
-          isDetailFlag: isDetailFlag,),
+        return HorizontalListEachItemView(
+          backgroundColor: backgroundColor,
+          myPatient: listOfMyPatient[index],
+          isDetailFlag: isDetailFlag,
         );
       },
     );
@@ -43,17 +35,16 @@ class HorizontalListEachItemView extends StatelessWidget {
   final MyPatient myPatient;
   final bool isDetailFlag;
 
-  HorizontalListEachItemView({
-    required this.backgroundColor,
-    required this.myPatient,
-    required this.isDetailFlag
-  });
+  const HorizontalListEachItemView(
+      {super.key,
+      required this.backgroundColor,
+      required this.myPatient,
+      required this.isDetailFlag});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(8.0),
-      width: 300,
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(8),
@@ -67,7 +58,8 @@ class HorizontalListEachItemView extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(99, 168, 252, 1),
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(8), bottomLeft: Radius.circular(8)),
+                    topLeft: Radius.circular(8),
+                    bottomLeft: Radius.circular(8)),
               ),
             ),
           ),
@@ -79,25 +71,23 @@ class HorizontalListEachItemView extends StatelessWidget {
                 Visibility(
                     visible: !isDetailFlag,
                     child: RichText(
-                  text: TextSpan(
-                    text: myPatient.title,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: TEXT_REGULAR_2X,
-                        fontWeight: FontWeight.w500),
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: " /3 patients",
+                      text: TextSpan(
+                        text: myPatient.title,
                         style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: TEXT_REGULAR,
-                            fontWeight: FontWeight.w400),
-                      )
-                    ],
-                  ),
-                ))
-
-                ,
+                            color: Colors.white,
+                            fontSize: TEXT_REGULAR_2X,
+                            fontWeight: FontWeight.w500),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: " /3 patients",
+                            style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: TEXT_REGULAR,
+                                fontWeight: FontWeight.w400),
+                          )
+                        ],
+                      ),
+                    )),
                 const SizedBox(
                   height: MARGIN_MEDIUM,
                 ),
@@ -119,17 +109,14 @@ class HorizontalListEachItemView extends StatelessWidget {
                           fontWeight: FontWeight.w400),
                     ),
                     Visibility(
-                        visible: isDetailFlag,
-                        child:SizedBox(
-                      width: MARGIN_MEDIUM_3,
-                    )
+                      visible: isDetailFlag,
+                      child: SizedBox(
+                        width: MARGIN_MEDIUM_3,
+                      ),
                     ),
                     Visibility(
                       visible: isDetailFlag,
                       child: Container(
-                        margin: EdgeInsets.all(8.0),
-                        height: 40,
-                        width: MediaQuery.of(context).size.width * 0.25,
                         // color: Colors.white10,
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(214, 246, 230, 1),
@@ -184,7 +171,10 @@ class HorizontalListEachItemView extends StatelessWidget {
                           color: Color.fromRGBO(99, 168, 252, 1),
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                         ),
-                        child: Icon(Icons.check,color: Colors.white,),
+                        child: Icon(
+                          Icons.check,
+                          color: Colors.white,
+                        ),
                       )
                     ],
                   ),
@@ -202,7 +192,7 @@ class HorizontalListEachItemView extends StatelessWidget {
                         ),
                       ),
                       Text(
-                       myPatient.eventDescription,
+                        myPatient.eventDescription,
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: Colors.grey,
@@ -213,7 +203,8 @@ class HorizontalListEachItemView extends StatelessWidget {
                         children: [
                           Container(
                             height: 40,
-                           // width: MediaQuery.of(context).size.width * 0.50,
+                            width:
+                                60, // width: MediaQuery.of(context).size.width * 0.50,
                             child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
                                 itemCount: 3,
@@ -226,7 +217,8 @@ class HorizontalListEachItemView extends StatelessWidget {
                                       decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         image: DecorationImage(
-                                          image: AssetImage('asset/esdeath.png'),
+                                          image:
+                                              AssetImage('asset/esdeath.png'),
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -235,11 +227,10 @@ class HorizontalListEachItemView extends StatelessWidget {
                                 }),
                           ),
                           Container(
-                           // width: 30,
-                           // height: 30,
                             decoration: const BoxDecoration(
                               color: Color.fromRGBO(99, 168, 252, 1),
-                              borderRadius: BorderRadius.all(Radius.circular(15)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15)),
                             ),
                             child: Text(
                               myPatient.patientName,

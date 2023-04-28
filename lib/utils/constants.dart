@@ -97,6 +97,49 @@ final List<MyPatient> listOfPatients = [
       patientName: "Saitama"),
 ];
 
+List<MyPatient> listOfPatients1 = [
+  MyPatient(
+      title: "Office No.248",
+      timeRange: "8:30AM - 02:00PM",
+      eventTitle: "Teeth Drilling",
+      eventDescription:
+      "A dental drill or handpiece is a hand-held, mechanical instrument used to perform a variety of common dental procedures, including removing decay, polishing fillings, performing cosmetic dentistry, and altering prostheses. The handpiece itself consists of internal mechanical components which initiate a rotational force and provide power to the cutting instrument, usually a dental burr. ",
+      patientProfile: 'asset/esdeath.png',
+      patientName: "Gojo"),
+  MyPatient(
+      title: "Office No.248",
+      timeRange: "9:30AM - 03:00PM",
+      eventTitle: "Teeth Drilling",
+      eventDescription:
+      "A dental drill or handpiece is a hand-held, mechanical instrument used to perform a variety of common dental procedures, including removing decay, polishing fillings, performing cosmetic dentistry, and altering prostheses. The handpiece itself consists of internal mechanical components which initiate a rotational force and provide power to the cutting instrument, usually a dental burr. ",
+      patientProfile: 'asset/esdeath.png',
+      patientName: "Sukuna"),
+  MyPatient(
+      title: "Office No.248",
+      timeRange: "10:30AM - 04:00PM",
+      eventTitle: "Teeth Drilling",
+      eventDescription:
+      "A dental drill or handpiece is a hand-held, mechanical instrument used to perform a variety of common dental procedures, including removing decay, polishing fillings, performing cosmetic dentistry, and altering prostheses. The handpiece itself consists of internal mechanical components which initiate a rotational force and provide power to the cutting instrument, usually a dental burr. ",
+      patientProfile: 'asset/esdeath.png',
+      patientName: "Zoro"),
+  MyPatient(
+      title: "Office No.248",
+      timeRange: "11:30AM - 05:00PM",
+      eventTitle: "Teeth Drilling",
+      eventDescription:
+      "A dental drill or handpiece is a hand-held, mechanical instrument used to perform a variety of common dental procedures, including removing decay, polishing fillings, performing cosmetic dentistry, and altering prostheses. The handpiece itself consists of internal mechanical components which initiate a rotational force and provide power to the cutting instrument, usually a dental burr. ",
+      patientProfile: 'asset/esdeath.png',
+      patientName: "Makima"),
+  MyPatient(
+      title: "Office No.248",
+      timeRange: "12:30AM - 06:00PM",
+      eventTitle: "Teeth Drilling",
+      eventDescription:
+      "A dental drill or handpiece is a hand-held, mechanical instrument used to perform a variety of common dental procedures, including removing decay, polishing fillings, performing cosmetic dentistry, and altering prostheses. The handpiece itself consists of internal mechanical components which initiate a rotational force and provide power to the cutting instrument, usually a dental burr. ",
+      patientProfile: 'asset/esdeath.png',
+      patientName: "Saitama"),
+];
+
 List<String> testFunction() {
   List<String> timesInterval = [];
   final interval = const Duration(minutes: 30);
