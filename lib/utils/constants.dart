@@ -100,45 +100,6 @@ final List<MyPatient> patientList = [
 
 
 
-List<String> testFunction() {
-  List<String> timesInterval = [];
-  final interval = const Duration(minutes: 30);
-  final startTime = TimeOfDay(hour: 8, minute: 0);
-  final endTime = TimeOfDay(hour: 16, minute: 0);
 
-  var time = startTime;
-  while (time.hour < endTime.hour ||
-      (time.hour == endTime.hour && time.minute <= endTime.minute)) {
-
-    time = time.replacing(
-      hour: (time.hour + (time.minute + interval.inMinutes) ~/ 60) % 24,
-      minute: (time.minute + interval.inMinutes) % 60,
-    );
-
-    final timeString =
-        '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
-    print("time = " + timeString);
-    timesInterval.add(timeString);
-  }
-
-  final Map<String, List<String>> timeIntervals1 = {};
-
-  for (final time in timesInterval) {
-    final hourMinute = time.split(':');
-    final hour = hourMinute[0];
-    final minute = hourMinute[1];
-    final formattedTime = '$hour:$minute';
-
-    if (!timeIntervals1.containsKey(formattedTime)) {
-      timeIntervals1[formattedTime] = [];
-    }
-
-    timeIntervals1[formattedTime]!.add(time);
-  }
-
-  print(timeIntervals1);
-
-  return timesInterval;
-}
 
 
