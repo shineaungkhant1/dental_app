@@ -87,12 +87,12 @@ class EventDetailPage extends StatelessWidget {
               ),
               const SizedBox(height: 80),
               SizedBox(
-                height: 200,
+                height: 230,
                 width: 500,
                 child: MyPatientsHorizontalListView(
-                  backgroundColor: const Color.fromRGBO(26, 105, 198, 1),
+                  bgColor: const Color.fromRGBO(26, 105, 198, 1),
                   isDetailFlag: true,
-                  listOfMyPatient: listOfPatients1,
+                  patientList: listOfPatients1,
                 ),
               )
             ],

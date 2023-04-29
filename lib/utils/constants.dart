@@ -31,7 +31,7 @@ class MyPatient {
   });
 }
 
-final List<Events> listOfEvents = [
+final List<Events> eventList = [
   Events(
       startTime: "8:00pm",
       endTime: "8:30pm",
@@ -54,7 +54,7 @@ final List<Events> listOfEvents = [
       currentTimeFlag: false),
 ];
 
-final List<MyPatient> listOfPatients = [
+final List<MyPatient> patientList = [
   MyPatient(
       title: "Office No.248",
       timeRange: "8:30AM - 02:00PM",

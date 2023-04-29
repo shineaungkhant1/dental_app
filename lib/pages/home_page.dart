@@ -96,9 +96,9 @@ class _HomePageState extends State<HomePage> {
                   margin: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
                   // color: Colors.blue,
                   child: MyPatientsHorizontalListView(
-                    backgroundColor: Color.fromRGBO(26, 105, 198, 1),
+                    bgColor: Color.fromRGBO(26, 105, 198, 1),
                     isDetailFlag: false,
-                    listOfMyPatient: listOfPatients,
+                    patientList: patientList,
                   ),
                 ),
                 Row(
