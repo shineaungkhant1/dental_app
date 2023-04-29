@@ -8,7 +8,6 @@ import '../widgets/horizontal_patients_list_view.dart';
 class EventDetailPage extends StatelessWidget {
   const EventDetailPage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +71,6 @@ class EventDetailPage extends StatelessWidget {
                   child: EventInformationView(),
                 ),
               ),
-
               const SizedBox(
                 height: 40,
               ),
@@ -82,8 +80,7 @@ class EventDetailPage extends StatelessWidget {
                     height: 130,
                     width: double.infinity,
                     margin: const EdgeInsets.all(MARGIN_LARGE),
-                    child: const CustomPaintCircleView()
-                ),
+                    child: const CustomPaintCircleView()),
               ),
               const SizedBox(height: 80),
               SizedBox(

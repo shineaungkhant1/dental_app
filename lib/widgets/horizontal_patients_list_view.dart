@@ -10,9 +10,9 @@ class MyPatientsHorizontalListView extends StatelessWidget {
 
   MyPatientsHorizontalListView(
       {super.key,
-        required this.bgColor,
-        required this.isDetailFlag,
-        required this.patientList});
+      required this.bgColor,
+      required this.isDetailFlag,
+      required this.patientList});
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +37,9 @@ class HorizontalListEachItemView extends StatelessWidget {
 
   const HorizontalListEachItemView(
       {super.key,
-        required this.bgColor,
-        required this.myPatient,
-        required this.isDetailFlag});
+      required this.bgColor,
+      required this.myPatient,
+      required this.isDetailFlag});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class HorizontalListEachItemView extends StatelessWidget {
                         text: myPatient.title,
                         style: TextStyle(
                             color:
-                            isDetailFlag ? Colors.black45 : Colors.white70,
+                                isDetailFlag ? Colors.black45 : Colors.white70,
                             fontSize: TEXT_REGULAR_2X,
                             fontWeight: FontWeight.w500),
                         children: <TextSpan>[
@@ -111,7 +111,7 @@ class HorizontalListEachItemView extends StatelessWidget {
                         myPatient.timeRange,
                         style: TextStyle(
                             color:
-                            isDetailFlag ? Colors.black45 : Colors.white70,
+                                isDetailFlag ? Colors.black45 : Colors.white70,
                             fontSize: TEXT_REGULAR,
                             fontWeight: FontWeight.w400),
                       ),
@@ -125,8 +125,8 @@ class HorizontalListEachItemView extends StatelessWidget {
                         visible: isDetailFlag,
                         child: Container(
                           // color: Colors.white10,
-                          padding:
-                          const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 5),
                           decoration: BoxDecoration(
                             color: const Color.fromRGBO(214, 246, 230, 1),
                             borderRadius: BorderRadius.circular(8),
@@ -217,10 +217,10 @@ class HorizontalListEachItemView extends StatelessWidget {
                         (!isDetailFlag)
                             ? HomePagePatientListImageView(myPatient: myPatient)
                             : const Padding(
-                          padding: EdgeInsets.only(
-                              top: MARGIN_CARD_MEDIUM_2),
-                          child: DetailPagePatientImageAndNameView(),
-                        ),
+                                padding:
+                                    EdgeInsets.only(top: MARGIN_CARD_MEDIUM_2),
+                                child: DetailPagePatientImageAndNameView(),
+                              ),
                       ],
                     ),
                   ),
@@ -249,8 +249,7 @@ class DetailPagePatientImageAndNameView extends StatelessWidget {
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             image: DecorationImage(
-              image:
-              AssetImage('asset/esdeath.png'),
+              image: AssetImage('asset/esdeath.png'),
               fit: BoxFit.cover,
             ),
           ),

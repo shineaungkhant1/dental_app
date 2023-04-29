@@ -49,7 +49,6 @@ class TimeAndEventListEachItem extends StatelessWidget {
         Container(
           height: 90,
           child: Row(
-
             children: [
               TimeView(
                 eventsItem: eventsItem,

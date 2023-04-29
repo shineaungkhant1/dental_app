@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-
 class CustomTimeCirclePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -18,20 +17,17 @@ class CustomTimeCirclePainter extends CustomPainter {
     Paint innerCirclePaint2 = Paint()
       ..color = Color.fromRGBO(19, 75, 157, 1)
       ..style = PaintingStyle.fill;
-     // ..strokeWidth = 100;
 
     double centerX = size.width / 2;
     double centerY = size.height / 2;
     double outerRadius = size.width / 2 - 10;
     double innerRadius = size.width / 2.2;
     double innerRadius2 = size.width / 4.2;
-  //  canvas.drawCircle(Offset(centerX, centerY), outerRadius, outerCirclePaint);
-  //  canvas.drawCircle(Offset(centerX, centerY), innerRadius, innerCirclePaint);
 
     canvas.drawCircle(Offset(centerX, centerY), outerRadius, outerCirclePaint);
     canvas.drawCircle(Offset(centerX, centerY), innerRadius, innerCirclePaint);
-    canvas.drawCircle(Offset(centerX, centerY), innerRadius2, innerCirclePaint2);
-
+    canvas.drawCircle(
+        Offset(centerX, centerY), innerRadius2, innerCirclePaint2);
 
     final double centerX1 = size.width / 2;
     final double centerY1 = size.height / 2;
@@ -48,13 +44,12 @@ class CustomTimeCirclePainter extends CustomPainter {
       );
     }
 
-
     Paint linePaint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.fill
-    ..strokeWidth = 5;
-    canvas.drawLine(Offset(centerX1+105,67), Offset(centerX1+170,67), linePaint);
-
+      ..strokeWidth = 5;
+    canvas.drawLine(
+        Offset(centerX1 + 105, 67), Offset(centerX1 + 170, 67), linePaint);
   }
 
   @override
@@ -62,4 +57,3 @@ class CustomTimeCirclePainter extends CustomPainter {
     return false;
   }
 }
-

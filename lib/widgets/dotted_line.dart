@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
+
 class DottedLine extends StatelessWidget {
   final double height;
   final Color color;
   final double strokeWidth;
   final bool dashLineFlag;
 
-  DottedLine({this.height = 100, this.color = Colors.grey, this.strokeWidth = 1, this.dashLineFlag = false});
+  DottedLine(
+      {this.height = 100,
+      this.color = Colors.grey,
+      this.strokeWidth = 1,
+      this.dashLineFlag = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: height,
       child: CustomPaint(
-        painter: DottedLinePainter(color: color, strokeWidth: strokeWidth,dashLineFlag: dashLineFlag ),
+        painter: DottedLinePainter(
+            color: color, strokeWidth: strokeWidth, dashLineFlag: dashLineFlag),
       ),
     );
   }
@@ -23,17 +29,17 @@ class DottedLinePainter extends CustomPainter {
   final double strokeWidth;
   final bool dashLineFlag;
 
-  DottedLinePainter({this.color = Colors.grey, this.strokeWidth = 1, this.dashLineFlag = false });
+  DottedLinePainter(
+      {this.color = Colors.grey,
+      this.strokeWidth = 1,
+      this.dashLineFlag = false});
 
   @override
   void paint(Canvas canvas, Size size) {
-
-    if(dashLineFlag == true)
-    activeDrawLine(canvas,size);
+    if (dashLineFlag == true)
+      activeDrawLine(canvas, size);
     else
-    inActiveDrawLine(canvas,size);
-
-
+      inActiveDrawLine(canvas, size);
   }
 
   @override
@@ -41,9 +47,7 @@ class DottedLinePainter extends CustomPainter {
     return false;
   }
 
-  void activeDrawLine(Canvas canvas, Size size)
-  {
-
+  void activeDrawLine(Canvas canvas, Size size) {
     Paint linePaint = Paint()
       ..color = Colors.blue
       ..strokeWidth = 2.0
@@ -86,7 +90,7 @@ class DottedLinePainter extends CustomPainter {
 
     double startY = 0.0;
     while (startY < size.height) {
-      canvas.drawLine(Offset(0, startY), Offset(0, startY  + dashWidth), paint);
+      canvas.drawLine(Offset(0, startY), Offset(0, startY + dashWidth), paint);
       startY += dashWidth;
     }
   }

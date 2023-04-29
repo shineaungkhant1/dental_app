@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -72,7 +71,6 @@ class _HomePageState extends State<HomePage> {
                   height: 150,
                   width: double.infinity,
                   margin: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
-                  // color: Colors.blue,
                   child: MyPatientsHorizontalListView(
                     bgColor: Color.fromRGBO(26, 105, 198, 1),
                     isDetailFlag: false,
@@ -104,12 +102,13 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 Expanded(
-                    child: TimeAndEventListCustomLayout(
-                  listOfEvents: eventList,
-                  onTapEvent: () {
-                    navigateToEventDetailScreen(context);
-                  },
-                ))
+                  child: TimeAndEventListCustomLayout(
+                    listOfEvents: eventList,
+                    onTapEvent: () {
+                      navigateToEventDetailScreen(context);
+                    },
+                  ),
+                )
               ],
             ),
           )
