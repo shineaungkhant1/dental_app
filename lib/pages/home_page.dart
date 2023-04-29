@@ -25,28 +25,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final List<Events> listOfEvents = [
-      Events(
-          startTime: "08:00",
-          endTime: "08:30",
-          eventName: "Event 1",
-          currentTimeFlag: true),
-      Events(
-          startTime: "09:00",
-          endTime: "09:30",
-          eventName: "Event 2",
-          currentTimeFlag: false),
-      Events(
-          startTime: "10:00",
-          endTime: "10:30",
-          eventName: "Event 3",
-          currentTimeFlag: false),
-      Events(
-          startTime: "11:00",
-          endTime: "11:30",
-          eventName: "Event 4",
-          currentTimeFlag: false),
-    ];
 
     return Scaffold(
       body: Stack(
@@ -127,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Expanded(
                     child: TimeAndEventListCustomLayout(
-                  listOfEvents: listOfEvents,
+                  listOfEvents: eventList,
                   onTapEvent: () {
                     navigateToEventDetailScreen(context);
                   },

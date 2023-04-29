@@ -92,7 +92,7 @@ class EventDetailPage extends StatelessWidget {
                 child: MyPatientsHorizontalListView(
                   bgColor: const Color.fromRGBO(26, 105, 198, 1),
                   isDetailFlag: true,
-                  patientList: listOfPatients1,
+                  patientList: patientList,
                 ),
               )
             ],

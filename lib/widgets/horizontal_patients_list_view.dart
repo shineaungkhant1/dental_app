@@ -21,7 +21,7 @@ class MyPatientsHorizontalListView extends StatelessWidget {
       itemCount: 2,
       itemBuilder: (BuildContext context, int index) {
         return HorizontalListEachItemView(
-          backgroundColor: bgColor,
+          bgColor: bgColor,
           myPatient: patientList[index],
           isDetailFlag: isDetailFlag,
         );
@@ -31,13 +31,13 @@ class MyPatientsHorizontalListView extends StatelessWidget {
 }
 
 class HorizontalListEachItemView extends StatelessWidget {
-  final Color backgroundColor;
+  final Color bgColor;
   final MyPatient myPatient;
   final bool isDetailFlag;
 
   const HorizontalListEachItemView(
       {super.key,
-        required this.backgroundColor,
+        required this.bgColor,
         required this.myPatient,
         required this.isDetailFlag});
 
@@ -47,7 +47,7 @@ class HorizontalListEachItemView extends StatelessWidget {
       width: 300,
       margin: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        color: isDetailFlag ? Colors.white : backgroundColor,
+        color: isDetailFlag ? Colors.white : bgColor,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
