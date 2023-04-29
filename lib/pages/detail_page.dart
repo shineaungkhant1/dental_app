@@ -6,17 +6,19 @@ import '../widgets/custom_time_circle_painter.dart';
 import '../widgets/horizontal_patients_list_view.dart';
 
 class EventDetailPage extends StatelessWidget {
+  const EventDetailPage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color.fromRGBO(18, 17, 151, 1),
+        backgroundColor: const Color.fromRGBO(18, 17, 151, 1),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Today",
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.w700,
             color: Colors.white,
             fontSize: 16,
@@ -26,12 +28,12 @@ class EventDetailPage extends StatelessWidget {
           onTap: () {
             Navigator.of(context).pop();
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back,
             color: Colors.white,
           ),
         ),
-        actions: [
+        actions: const [
           Icon(
             Icons.search,
             color: Colors.white,
@@ -59,43 +61,41 @@ class EventDetailPage extends StatelessWidget {
             right: 0,
             child: PartTwoBackground(),
           ),
-          Container(
-            // color: Colors.lightBlue,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 70,
-                  child: const Padding(
-                    padding: EdgeInsets.only(
-                        top: MARGIN_MEDIUM_2, left: MARGIN_MEDIUM_2),
-                    child: EventInformationView(),
-                  ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 70,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: MARGIN_MEDIUM_2, left: MARGIN_MEDIUM_2),
+                  child: EventInformationView(),
                 ),
+              ),
 
-                SizedBox(
-                  height: 40,
+              const SizedBox(
+                height: 40,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(MARGIN_LARGE),
+                child: Container(
+                    height: 130,
+                    width: double.infinity,
+                    margin: const EdgeInsets.all(MARGIN_LARGE),
+                    child: const CustomPaintCircleView()
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(MARGIN_LARGE),
-                  child: Container(
-                      height: 130,
-                      width: double.infinity,
-                      margin: EdgeInsets.all(MARGIN_LARGE),
-                      child: CustomPaintCircleView()),
+              ),
+              const SizedBox(height: 80),
+              SizedBox(
+                height: 200,
+                width: 500,
+                child: MyPatientsHorizontalListView(
+                  backgroundColor: const Color.fromRGBO(26, 105, 198, 1),
+                  isDetailFlag: true,
+                  listOfMyPatient: listOfPatients1,
                 ),
-                SizedBox(height: 80),
-                Container(
-                  height: 200,
-                  width: 500,
-                  child: MyPatientsHorizontalListView(
-                    backgroundColor: Color.fromRGBO(26, 105, 198, 1),
-                    isDetailFlag: true,
-                    listOfMyPatient: listOfPatients1,
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
           Positioned(
             left: 70.0,
@@ -110,7 +110,7 @@ class EventDetailPage extends StatelessWidget {
                   color: Colors.white,
                   width: 4,
                 ),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('asset/esdeath.png'),
                   fit: BoxFit.cover,
                 ),
@@ -130,7 +130,7 @@ class EventDetailPage extends StatelessWidget {
                   color: Colors.white,
                   width: 4,
                 ),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('asset/esdeath.png'),
                   fit: BoxFit.cover,
                 ),
@@ -150,7 +150,7 @@ class EventDetailPage extends StatelessWidget {
                   color: Colors.white,
                   width: 4,
                 ),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('asset/esdeath.png'),
                   fit: BoxFit.cover,
                 ),
@@ -161,25 +161,23 @@ class EventDetailPage extends StatelessWidget {
             left: 180.0,
             top: 200.0,
             //  right: 0.0,
-            child: Container(
-              child: Column(
-                children: const [
-                  Text(
-                    "2:45",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: TEXT_HEADING_2X,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "PM",
-                    style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: TEXT_REGULAR,
-                        fontWeight: FontWeight.w400),
-                  )
-                ],
-              ),
+            child: Column(
+              children: const [
+                Text(
+                  "2:45",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: TEXT_HEADING_2X,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "PM",
+                  style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: TEXT_REGULAR,
+                      fontWeight: FontWeight.w400),
+                )
+              ],
             ),
           )
         ],
@@ -196,7 +194,7 @@ class CustomPaintCircleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      size: Size(100, 100),
+      size: const Size(100, 100),
       painter: CustomTimeCirclePainter(),
     );
   }
@@ -246,7 +244,7 @@ class PartTwoBackground extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      color: Color.fromRGBO(12, 68, 145, 1),
+      color: const Color.fromRGBO(12, 68, 145, 1),
     );
   }
 }

@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentTab = 0;
-  final List<Widget> screens =[
+  final List<Widget> screens = [
     HomePage(),
     HomePage(),
     HomePage(),
@@ -59,13 +59,15 @@ class _HomePageState extends State<HomePage> {
               width: MediaQuery.of(context).size.width,
               height: 250,
               decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [
                     Color.fromRGBO(25, 91, 183, 1),
                     Color.fromRGBO(18, 17, 151, 1)
-                  ])),
+                  ],
+                ),
+              ),
               // color: BACKGROUND_COLOR,
             ),
           ),
@@ -148,8 +150,7 @@ class _HomePageState extends State<HomePage> {
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.white, width: 14),
                 shape: BoxShape.circle,
-                color: Colors.blue
-            ),
+                color: Colors.blue),
             child: Icon(Icons.add, size: 30),
           ),
         ),
@@ -160,84 +161,79 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           height: 60,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:<Widget> [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  MaterialButton(
-                    minWidth: 40,
-                      onPressed: (){
-                    setState(() {
-                      currentScreen = HomePage();
-                      currentTab = 0;
-                    });
-                  },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.home,
-                          color: currentTab == 0 ? Colors.blue : Colors.grey,
-                        ),
-                      ],
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              MaterialButton(
+                minWidth: 40,
+                onPressed: () {
+                  setState(() {
+                    currentScreen = HomePage();
+                    currentTab = 0;
+                  });
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.home,
+                      color: currentTab == 0 ? Colors.blue : Colors.grey,
                     ),
-                  ),
-                  MaterialButton(
-                    minWidth: 40,
-                    onPressed: (){
-                      setState(() {
-                        currentScreen = HomePage();
-                        currentTab = 1;
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.calendar_month,
-                          color: currentTab == 1 ? Colors.blue : Colors.grey,
-                        ),
-                      ],
+                  ],
+                ),
+              ),
+              MaterialButton(
+                minWidth: 40,
+                onPressed: () {
+                  setState(() {
+                    currentScreen = HomePage();
+                    currentTab = 1;
+                  });
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.calendar_month,
+                      color: currentTab == 1 ? Colors.blue : Colors.grey,
                     ),
-                  ),
-                  MaterialButton(
-                    minWidth: 40,
-                    onPressed: (){
-                      setState(() {
-                        currentScreen = HomePage();
-                        currentTab = 2;
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.access_time,
-                          color: currentTab == 2 ? Colors.blue : Colors.grey,
-                        ),
-                      ],
+                  ],
+                ),
+              ),
+              MaterialButton(
+                minWidth: 40,
+                onPressed: () {
+                  setState(() {
+                    currentScreen = HomePage();
+                    currentTab = 2;
+                  });
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.access_time,
+                      color: currentTab == 2 ? Colors.blue : Colors.grey,
                     ),
-                  ),
-                  MaterialButton(
-                    minWidth: 40,
-                    onPressed: (){
-                      setState(() {
-                        currentScreen = HomePage();
-                        currentTab = 3;
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.person,
-                          color: currentTab == 3 ? Colors.blue : Colors.grey,
-                        ),
-                      ],
+                  ],
+                ),
+              ),
+              MaterialButton(
+                minWidth: 40,
+                onPressed: () {
+                  setState(() {
+                    currentScreen = HomePage();
+                    currentTab = 3;
+                  });
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.person,
+                      color: currentTab == 3 ? Colors.blue : Colors.grey,
                     ),
-                  )
-                ],
+                  ],
+                ),
               )
             ],
           ),
